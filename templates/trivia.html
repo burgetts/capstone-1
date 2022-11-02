@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block trivia_js %}
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="/static/js/trivia.js"></script>
+{% endblock %}
+
+{% block title %} Trivia {% endblock %}
+
+{% block content %}
+
+    <div id="timer">  </div>
+    <container id="trivia-container" class="trivia-container">
+    </container>
+    <form id="check-answers"> 
+        <button id="trivia-submit"type="submit" class="large-btn center">Check my answers!</button>
+     </form>
+
+
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 
+    {% if g.user %}
+        Welcome back, {{g.user.first_name}}!
+    {% else %}
+        Welcome to ActivBrain
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+{% if g.user %}
+<p> We're glad you're here.</p>
+
+<div id="history">
+    <h2> Recent Exercise History </h2>
+    {% if records |count > 0 %}
+
+    <table class="center">
+            <tr>
+                <th> Date</th>
+                <th> Trivia Score</th>
+                <th> Math Score </th>
+                <th> Reading Completed? </th>
+            </tr>
+            {% for record in records %}
+            <tr>
+                <td> {{record.date}} </td>
+                <td> {{record.trivia_score}} </td>
+                <td> {{record.math_score}} </td>
+                <td> {{record.reading}} </td>
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+
+    {% else %}
+    <div class="no-history center"> You have not completed any exercises yet. </div>
+    {% endif %}
+  
+<form action="/trivia/instructions"> 
+    <button class="large-btn center"> Get started with today's exercises.</button>
+</form>
+<form action="/user/{{g.user.id}}"> 
+    <button class="large-btn center"> See your full history report. </button>
+</form>
+{% else %}
+
+<h2> Did you know? </h2>
+    <div class="facts-container">
+        <div> <span class="dark-accent"> 1/3 </span> of seniors experience Alzheimer's or another form of dementia.</div>
+        <div> There was a 
+            <span class="dark-accent">145% </span>increase in Alzheimer's deaths in the U.S. from 2000-2017.</div>
+        <div> Brain changes begin <span class="dark-accent">20 years </span> before symptoms appear. </div> 
+    </div> 
+
+<div class="mission center">
+    <p class="center"> 
+        We believe that 30 minutes of simple brain exercises can strengthen your brain and help slow the onset of degenerative memory loss.
+        Come join us for some trivia, math, and reading exercises to get your juices flowing! You can play without an account, however, you will not be able to keep track of your progress over time.
+    </p>
+</div>
+
+<div>
+    <form action="/signup">
+        <button class="large-btn center"> Sign up for an account </button>
+    </form>
+    <form action="/trivia/instructions">
+        <button class="large-btn center"> Get started with the exercises </button>
+    </form>
+</div>
+{% endif %}
+
+{% endblock %}

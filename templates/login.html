@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import generate_form %}
+
+{% block title %} Log in {% endblock %}
+
+{% block content %}
+
+{% for msg in get_flashed_messages() %}
+<div class="danger-text"> {{msg}} </div>
+{% endfor %}
+
+<div>
+    <div class="form-background center">
+        <form action="/login" method="post" class="login">
+            {{ generate_form(form) }}
+            <button class="large-btn wide"> Log In </button>
+            <small class="small"> Don't have an account? 
+                <a href="/signup"> Sign up here</a>
+            </small> 
+        </form>
+    </div>
+</div>
+{% endblock %}

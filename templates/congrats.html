@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Congrats on finishing today's exercises
+
+    {% if g.user %}
+    , {{g.user.first_name}}
+    {% endif %}
+    ! &#127881;
+{% endblock %}
+
+{% block content %}
+    <p> Your brain thanks you. </p>
+    {% if not g.user %}
+    Create an account to save your history and see your progress!
+    <form action="/signup">
+        <button class="large-btn center"> Sign up</button>
+    </form>
+    <form action="/">
+        <button class="large-btn center"> Back to homepage </button>
+    </form>
+    
+    {% else %}
+
+    <!-- If user is logged in, show stats and previous stats. -->
+    <table class="summary center">
+        <tr>
+            <th colspan="3"> Stats From This Round </th>
+        </tr>
+        <tr>
+            <td>Trivia Score</td>
+            <td>Math Score</td>
+        </tr>
+        <tr>
+            <td> {{curr_trivia_score}} </td>
+            <td> {{curr_math_score}}   </td>
+        </tr>
+    </table>
+
+    <table class="all-time summary center ">
+        <tr>
+            <th colspan="4"> All Time Stats </th>
+        </tr>
+        <tr>
+            <td># Times Played</td>
+            <td>Highest Trivia Score</td>
+            <td> Highest Math Score </td>
+        </tr>
+        <tr>
+            <td> {{times_played}} </td>
+            <td> {{high_score_trivia}}  </td>
+            <td> {{high_score_math}} </td>
+        </tr>
+    </table>
+
+    <form action="/">
+        <button class="large-btn center"> Return to homepage </button>
+    </form>
+    <form action="/trivia/instructions">
+        <button class="large-btn center"> Play Again </button>
+    </form>
+
+    {% endif %}
+
+{% endblock %}

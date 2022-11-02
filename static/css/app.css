@@ -1,0 +1,255 @@
+* {
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: x-large;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Message if user isn't logged in */
+.no-history {
+    color: gray;
+    font-size: large;
+}
+
+/* For signup/login forms */
+.small {
+    font-size: medium;
+    text-align: left;
+    color: gray;
+    margin: 5px 0px;
+}
+
+.small a {
+    font-size: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+.small a:hover {
+    color: white;
+}
+
+/* Button style */
+.large-btn{
+    background: pink;
+    color: white;
+    padding: 10px;
+    border: 1px solid pink;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.large-btn.accent {
+    background: gray;
+    border: 3px solid gray;
+    color: white;
+}
+/* Signup and login buttons */
+.large-btn.wide {
+    width: 100%;
+}
+
+.large-btn:hover{
+    background:rgb(229, 129, 145);
+    border: 1px solid rgb(229,129,145);
+    color: lightgray;
+    cursor: pointer;
+}
+
+.large-btn.accent:hover {
+    background: rgb(65, 65, 65);
+    color: white;
+    border: 3px solid rgb(65, 65, 65);
+}
+
+/* Flashed messages */
+.danger-text {
+    color: red;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+/* Forms */
+form {
+    margin: 20px;
+    display: grid;
+}
+
+.login input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px dashed gray;
+  }
+
+.signup input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px dashed gray;
+  }
+.form-background {
+    border: 5px solid gray;
+    border-radius: 8px;
+    width: 40%;
+    padding: 20px;
+    background: lightgray;
+}
+
+/* Records report */
+.history table, th, td{
+    border: 3px dashed pink;
+    padding: 5px;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center;
+    border: 3px solid pink;
+    border-radius: 8px;
+}
+
+/* Trivia */
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+/* Accents */
+.accent {
+    color: pink;
+}
+
+.dark-accent{
+    color: gray;
+}
+
+.black {
+ color: black;
+}
+
+/* User details page */
+.high-score-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+/* Homepage classes */
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    place-items: center;
+}
+
+.facts-container div {
+    border: 3px solid gray;
+    background: lightgray;
+    border-radius: 1rem;
+    margin: 0px 20px;
+    padding: 10px 5px;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.mission {
+    width: 50%;
+}
+
+.instructions {
+    width: 50%;
+    border: 3px solid gray;
+    border-radius: 1rem;
+    padding: 10px;
+    background: lightgray;
+    color: black;
+}
+
+/* Trivia */
+.trivia-container {
+    display: grid;
+    grid-template-rows: auto; 
+}
+
+.trivia-container ul {
+    border: 5px solid gray;
+    border-radius: 1rem;
+    width: 75%;
+    padding: 10px 10px;
+    margin: 10px auto 10px;
+    list-style-type: none;
+    background: lightgray;
+}
+
+.trivia-container li {
+    margin: 10px auto 10px;
+}
+
+.trivia-container input {
+    position: relative;
+    display: block;
+    text-align:center;
+}
+.trivia-container label {
+    display: block;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 2px dashed gray;
+    margin-bottom: 5px;
+    cursor: pointer;
+    /* font-family:Arial, Helvetica, sans-serif; */
+}
+input[type="radio"] {
+    /* display: none; */
+    position: absolute;
+    width: 80%;
+    appearance: none;
+    height: 10%;
+}
+.trivia-container input[type="radio"]:checked + label {
+    background: lightblue;
+}
+
+.correct.li {
+    border: 5px dashed green;
+    background: lightgreen;
+    color: green;
+}
+
+/* Math */
+.math-container{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+}
+.math-answer {
+    width: 10%;
+    border: 5px dashed pink;
+    margin: 20px auto 20px;
+    height: 100%;
+}
+
+.math-problem {
+    font-size: xxx-large;
+}
+
+/* Congrats page */
+.summary {
+    margin: 20px auto 20px;
+}
+

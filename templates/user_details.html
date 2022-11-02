@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} {{g.user.first_name}} {{g.user.last_name}}'s Account History {% endblock %}
+
+{% block content %}
+
+{% if records |count > 0 %}
+<div class="high-score-container">
+    <div> Total # Times Played
+        <div class="accent"> {{times_played}} </div> 
+    </div>
+    <div> Highest Trivia Score
+        <div class="accent"> {{high_score_trivia}}</div>
+    </div>
+    <div> Highest Math Score 
+        <div class="accent"a>{{high_score_math}} </div>
+     </div>
+</div>
+
+<div id="history">
+    <h2> All Time Exercise History </h2>
+    <table class="center">
+            <tr>
+                <th> Date</th>
+                <th> Trivia Score</th>
+                <th> Math Score </th>
+                <th> Reading Completed? </th>
+            </tr>
+            {% for record in records %}
+            <tr>
+                <td> {{record.date}} </td>
+                <td> {{record.trivia_score}} </td>
+                <td> {{record.math_score}} </td>
+                <td> {{record.reading}} </td>
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+{% else %}
+<div class="no-history center"> You have not completed any exercises yet. </div>
+{% endif %}
+<form action="/trivia/instructions"> 
+    <button class="large-btn center"> Get started with today's exercises.</button>
+</form>
+<form action="/"> 
+    <button class="large-btn center"> Go back to homepage. </button>
+</form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block reading_js %}
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="/static/js/reading.js"></script>
+{% endblock %}
+
+{% block title %} Reading {% endblock %}
+
+{% block content %}
+<container id="reading-container">
+    <div> Remember, it is best to practice reading the story out loud. </div> <br>
+    <div id="story-title"></div>
+    <div id="story-author"></div>
+    <div id="story" class="instructions center"> </div>
+</container>
+<form action="/reading">
+    <button class="large-btn center"> Give me another </button>
+</form>
+<form action="/save-stats" method="post">
+    <button class="large-btn center"> I'm done! </button>
+</form>
+{% endblock %}

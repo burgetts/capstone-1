@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Trivia Instructions {% endblock %}
+
+{% block content %}
+
+<div class="instructions center"> There are 5 trivia questions. Select your best guess as the right answer. Once you answer all 5 questions and submit your answers, the correct answers will be displayed. </div> <br>
+
+     <form action="/trivia" class="text-center">
+        <button class="large-btn center"> Let's Play! </button>
+     </form>
+
+{% endblock %}

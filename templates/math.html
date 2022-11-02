@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block math_js %}
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="/static/js/math.js"></script>
+{% endblock %}
+
+{% block title %} Math {% endblock %}
+
+{% block content %}
+
+<container id="math-container" class="math-container">
+    <div id="timer"> </div>
+    <div id="completed">Score: 0</div>
+    <form id="math-form" action="/get-math" method="post">
+        <div class="math-problem"></div>
+        <input id="math-answer" class="math-answer center" type="text"> <br> <br>
+        <button type="submit" class="large-btn center"> Submit </button>
+    </form>
+    <form id="skip-math" action="/reading/instructions">
+        <button class="large-btn accent center"> I'm done </button>
+    </form>
+</container>
+
+{% endblock %}

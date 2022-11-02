@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Math Instructions {% endblock %}
+
+{% block content %}
+
+<div class="instructions center"> You will have 5 minutes to answer as many math questions as you can. Press enter or the submit button to submit your answer. Focus on speed, not accuracy! It's okay to skip one if you don't know it. You're doing great! </div> <br>
+
+     <form action="/math" class="text-center">
+        <button class="large-btn center"> Let's Play! </button>
+     </form>
+
+{% endblock %}
