@@ -30,5 +30,9 @@ The tools used for this project include:
 - pip3 install requirements.txt
 - flask run
 
+## Database Schema and API Selection
+![IMG_0132](https://user-images.githubusercontent.com/104522905/199739820-f5c9ca68-9681-49b6-a9a2-ec500ff66859.jpg)  
+Trivia API: https://the-trivia-api.com/   
+Short story API: https://shortstories-api.onrender.com/   
 ## Credits
 Thank you to my friend Gabe Payne for creating the logo!
